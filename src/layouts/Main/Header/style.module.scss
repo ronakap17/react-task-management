@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: var(--box-color);
+  transition: var(--tran-05);
+  z-index: 10;
+
+  .sidebar-toggle {
+    font-size: 26px;
+    color: var(--text-color-light);
+    cursor: pointer;
+  }
+  img {
+    width: 40px;
+    border-radius: 50%;
+    margin: 0;
+  }
+}

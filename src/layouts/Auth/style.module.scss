@@ -1,0 +1,10 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  background-color: var(--body-color);
+  transition: var(--tran-05);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

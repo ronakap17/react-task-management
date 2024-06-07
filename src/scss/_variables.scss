@@ -1,0 +1,22 @@
+@use 'sass:math';
+:root {
+  // Font
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-family-arial: Arial, Helvetica, sans-serif;
+  --font-size: 16px;
+  --font-line-height: 1.142857142857143;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-medium-strong: 600;
+
+  // Sizes
+  @for $i from 1 through 100 {
+    --size-#{$i}: #{math.div($i, 16) * 1rem};
+  }
+
+  /* ====== Transition ====== */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.3s ease;
+  --tran-05: all 0.3s ease;
+}

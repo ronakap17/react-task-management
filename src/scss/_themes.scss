@@ -1,0 +1,38 @@
+@use 'colors' as *;
+
+
+html {
+  --body-color: #{$light-body-color};
+  --box-color: #{$light-box-color};
+  --primary-color: #{$light-primary-color};
+  --primary-color-light: #{$light-primary-color-light};
+  --primary-color-dark: #{$light-primary-color-dark};
+  --toggle-color: #{$light-toggle-color};
+  --text-color: #{$light-text-color};
+  --text-color-light: #{$light-text-color-light};
+  --box-shadow-color: #{$light-box-shadow-color};
+  --border-color: #{$light-border-color};
+
+  // Others
+  --border: 1px solid #{$light-border-color};
+  --border-radius: var(--size-4);
+  --box-shadow: 0 0 var(--size-15) #{$light-box-shadow-color};
+}
+
+html[data-theme="dark"] {
+  --body-color: #{$dark-body-color};
+  --box-color: #{$dark-box-color};
+  --primary-color: #{$dark-primary-color};
+  --primary-color-light: #{$dark-primary-color-light};
+  --primary-color-dark: #{$dark-primary-color-dark};
+  --toggle-color: #{$dark-toggle-color};
+  --text-color: #{$dark-text-color};
+  --text-color-light: #{$dark-text-color-light};
+  --box-shadow-color: #{$dark-box-shadow-color};
+  --border-color: #{$dark-border-color};
+
+  // Others
+  --border: 1px solid #{$dark-border-color};
+  --border-radius: .2857142857142857rem;
+  --box-shadow: 0 0 var(--size-15) #{$dark-box-shadow-color};
+}
