@@ -4,12 +4,14 @@ import MainLayout from "../layouts/Main";
 import AuthLayout from "../layouts/Auth";
 import SignIn from "~/pages/Auth/SignIn";
 import SignUp from "~/pages/Auth/SignUp";
+import ErrorMessage from "~/components/ErrorMessage";
 
 const AppRouter: React.FC = () => {
   const routes = createBrowserRouter([
     {
       path: "/",
       Component: MainLayout,
+      errorElement: <ErrorMessage />,
       children: [
         {
           index: true,

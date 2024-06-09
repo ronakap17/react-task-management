@@ -1,20 +1,16 @@
+import Text from "~/components/Form/Text";
 import classes from "./style.module.scss";
+import Button from "~/components/Form/Button";
+import Form from "~/components/Form/Form";
 const SignIn: React.FC = () => {
   return (
     <section className={classes["container"]}>
       <header>Login</header>
-      <form action="#" className={classes["form"]}>
-        <div className={classes["input-box"]}>
-          <label>Email</label>
-          <input type="text" placeholder="Enter email address" required />
-        </div>
-
-        <div className={classes["input-box"]}>
-          <label>Password</label>
-          <input type="password" placeholder="Enter Password" required />
-        </div>
-        <button>SIGN IN</button>
-      </form>
+      <Form className={classes["form"]}>
+        <Text label="Email" placeholder="Enter email address" required/>
+        <Text label="Password" placeholder="Enter Password" required/>
+        <Button color="primary" loading>SIGN IN</Button>
+      </Form>
     </section>
   );
 };

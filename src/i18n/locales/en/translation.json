@@ -1,5 +1,8 @@
 {
   "app": {
     "title": "Task Manager"
+  },
+  "system": {
+    "errorBoundaryMessage": "Something went wrong!"
   }
 }

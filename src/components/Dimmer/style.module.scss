@@ -1,0 +1,28 @@
+.dimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-dimmer);
+
+  &.page {
+    position: fixed;
+    z-index: var(--z-index-overlay);
+  }
+}
+
+.dimmer-enter {
+  opacity: 0;
+}
+.dimmer-enter-active {
+  opacity: 1;
+  transition: opacity .15s ease-out;
+}
+.dimmer-exit {
+  opacity: 1;
+}
+.dimmer-exit-active {
+  opacity: 0;
+  transition: opacity .15s ease-out;
+}

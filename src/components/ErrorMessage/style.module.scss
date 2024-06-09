@@ -1,0 +1,14 @@
+@import '~Style/mixins';
+
+.error {
+  @include center-box;
+  text-align: center;
+  color: var(--text-color);
+  font-size: var(--size-64);
+
+  .message {
+    color: var(--text-color-light);
+    font-size: var(--size-32);
+
+  }
+}

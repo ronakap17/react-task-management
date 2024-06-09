@@ -3,6 +3,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
 import classes from "./style.module.scss";
+import { AppLoader } from "./Loader/AppLoader";
 
 const MainLayout: React.FC = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -20,6 +21,7 @@ const MainLayout: React.FC = () => {
           <Outlet />
         </section>
       </section>
+      <AppLoader />
     </>
   );
 };

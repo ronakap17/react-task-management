@@ -1,0 +1,41 @@
+.button {
+  display: flex;
+  flex: 1 1 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: var(--size-40);
+  font-size: var(--size-14);
+  font-weight: 400;
+  margin-top: var(--size-30);
+  border: none;
+  cursor: pointer;
+  transition: var(--tran-02);
+  border-radius: var(--size-4);
+
+  &.primary {
+    color: var(--box-color);
+    background: var(--primary-color);
+  }
+
+  &.warn {
+    color: var(--box-color);
+    background: var(--warn-color);
+  }
+  &.success {
+    color: var(--box-color);
+    background: var(--success-color);
+  }
+  &.danger {
+    color: var(--box-color);
+    background: var(--danger-color);
+  }
+
+  &:hover {
+      opacity: 0.9; 
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+}
