@@ -14,11 +14,11 @@ export interface UseField {
 
 const useField: UseField = <T>(defaultProps) => {
   const data = useMemo<UseFieldData<T>>(() => {
-    const { className, label, ...inputProps } = defaultProps;
+    const { className, label, errors, ...inputProps } = defaultProps;
 
     return {
       fieldProps: {
-        className, label
+        className, label, errors
       },
       inputProps: inputProps as T
     }

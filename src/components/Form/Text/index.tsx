@@ -27,7 +27,7 @@ const Text: TextComponent = (props, ref) => {
         {...othersInputProps}
         ref={ref}
         type={othersInputProps.type || "text"}
-        className={`${classes["input-box"]} ${inputClassName}`}
+        className={`${classes["input"]} ${inputClassName}`}
         disabled={othersInputProps.disabled}
       />
     </Field>

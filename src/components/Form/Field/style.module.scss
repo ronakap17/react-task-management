@@ -12,4 +12,27 @@
       flex: 1 1 100%;
       color: var(--text-color);
     }
+
+    &.has-errors {
+      input {
+        border-width: var(--size-2);
+        border-color: var(--danger-color);
+      }
+    }
+  }
+
+  .errors {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    font-size: var(--size-12);
+    color: var(--danger-color);
+    margin-top: var(--size-6);
+  
+    span {
+      font-size: 175%;
+      line-height: .7;
+      margin: 0 3px;
+    }
   }

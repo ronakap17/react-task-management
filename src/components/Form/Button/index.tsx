@@ -25,7 +25,6 @@ const Button: ButtonComponent = ({
   loading,
   ...props
 }) => {
-  console.log(color);
   const buttonProps: HTMLButtonProps = {
     ...props,
     className: classNames(

@@ -2,7 +2,7 @@ import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/Main";
 import AuthLayout from "../layouts/Auth";
-import SignIn from "~/pages/Auth/SignIn";
+import SignIn, { action as singInAction} from "~/pages/Auth/SignIn";
 import SignUp from "~/pages/Auth/SignUp";
 import ErrorMessage from "~/components/ErrorMessage";
 
@@ -26,10 +26,12 @@ const AppRouter: React.FC = () => {
     {
       path: "/auth",
       Component: AuthLayout,
+      errorElement: <ErrorMessage />,
       children: [
         {
-          index: true,
+          path: 'sign-in',
           element: <SignIn />,
+          action: singInAction,
         },
         {
           path: "sign-up",

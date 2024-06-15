@@ -3,6 +3,25 @@
     "title": "Task Manager"
   },
   "system": {
-    "errorBoundaryMessage": "Something went wrong!"
+    "error": {
+      "unknown": "Unknown Error Occurred! Please try again later.",
+      "default": "Something went wrong! Please try again later."
+    }
+  },
+
+  "auth": {
+    "login": {
+      "title": "Login",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter email address"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter Password"
+        }
+      }
+    }
   }
 }
