@@ -1,16 +1,19 @@
 import React from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/Main";
 import AuthLayout from "../layouts/Auth";
 import SignIn, { action as singInAction} from "~/pages/Auth/SignIn";
 import SignUp from "~/pages/Auth/SignUp";
 import ErrorMessage from "~/components/ErrorMessage";
+import { useAppSelector } from "~/store";
+import {isUserAuthenticated} from "~/pages/Auth/slice";
 
 const AppRouter: React.FC = () => {
+  const isUserLoggedIn = useAppSelector(state => isUserAuthenticated(state));
   const routes = createBrowserRouter([
     {
       path: "/",
-      Component: MainLayout,
+      element: isUserLoggedIn ? <MainLayout /> : <Navigate to="/auth/sign-in" />,
       errorElement: <ErrorMessage />,
       children: [
         {
@@ -25,7 +28,7 @@ const AppRouter: React.FC = () => {
     },
     {
       path: "/auth",
-      Component: AuthLayout,
+      element: !isUserLoggedIn ? <AuthLayout /> : <Navigate to="/" />,
       errorElement: <ErrorMessage />,
       children: [
         {

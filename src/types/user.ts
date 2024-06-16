@@ -6,3 +6,14 @@ export interface User {
   created_at: null | string;
   updated_at: null | string;
 }
+
+export type LoginPayload = {
+  email: string;
+  password: string;
+};
+
+export type LoginResponsePayload = {
+  token: string
+  token_type: string
+  user: User
+}

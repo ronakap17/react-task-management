@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { LoginPayload } from "./slice";
 import { AuthAPI } from "~/api/auth";
+import { LoginPayload, LoginResponsePayload } from "~/types/user";
 
-export const userLogin = createAsyncThunk(
+export const userLogin = createAsyncThunk<LoginResponsePayload, LoginPayload>(
   "auth/login",
   async ({ email, password }: LoginPayload, { rejectWithValue }) => {
     try {

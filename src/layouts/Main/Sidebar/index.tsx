@@ -1,7 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import classes from "./style.module.scss";
 import Logo from "~/assets/logo.png";
 import { ThemeContext } from "~/providers/ThemeProvider";
+import { useDispatch } from "react-redux";
+import { authAction } from "~/pages/Auth/slice";
 
 interface Sidebar {
   open: boolean
@@ -9,6 +11,7 @@ interface Sidebar {
 
 const Sidebar: React.FC<Sidebar> = ({open}) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -16,6 +19,10 @@ const Sidebar: React.FC<Sidebar> = ({open}) => {
       theme
     );
   }, [theme]);
+
+  const logoutHandler = useCallback(() => {
+    dispatch(authAction.logout())
+  }, [])
 
   return (
     <nav className={`${classes["sidebar"]} ${!open ? classes["close"] : ''}  ${classes[theme]}`}>
@@ -86,7 +93,7 @@ const Sidebar: React.FC<Sidebar> = ({open}) => {
 
         <div className={classes["bottom-content"]}>
           <li className="">
-            <a href="#">
+            <a onClick={logoutHandler}>
               <i className={`bx bx-log-out ${classes["icon"]}`}></i>
               <span className={`${classes["text"]} ${classes["nav-text"]}`}>Logout</span>
             </a>
