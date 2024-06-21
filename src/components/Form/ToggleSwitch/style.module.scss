@@ -1,0 +1,39 @@
+.toggle-switch {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  min-width: var(--size-60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--size-6);
+  cursor: pointer;
+
+  .switch {
+    position: relative;
+    height: var(--size-22);
+    width: var(--size-40);
+    border-radius: var(--size-25);
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: var(--size-15);
+      width: var(--size-15);
+      border-radius: 50%;
+      top: 50%;
+      left: var(--size-5);
+      transform: translateY(-50%);
+      background-color: var(--box-color);
+      transition: var(--tran-04);
+    }
+
+    &.switch-toggle--on {
+      &::before {
+        left: 20px;
+      }
+    }
+  }
+}

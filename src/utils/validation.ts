@@ -1,8 +1,8 @@
-export const required = ({name, value}, {values}): boolean => {
+export const required = ({value}): boolean => {
     return value !== '' && value !== undefined && value !== null;
 };
 
-export const email = ({name, value}, {values}): boolean => {
+export const email = ({value}): boolean => {
     const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return pattern.test(value);
 };
@@ -17,9 +17,3 @@ export const validateOperatingTime = (oldValue, newValue): { type, difference } 
     }
     return null;
 };
-
-
-function validateEmail(email) {
-    const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return pattern.test(email);
-  }

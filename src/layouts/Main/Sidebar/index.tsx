@@ -1,31 +1,33 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import classes from "./style.module.scss";
 import Logo from "~/assets/logo.png";
 import { ThemeContext } from "~/providers/ThemeProvider";
-import { useDispatch } from "react-redux";
 import { authAction } from "~/pages/Auth/slice";
+import { useAppDispatch } from "~/store";
+import ToggleSwitch from "~/components/Form/ToggleSwitch";
 
 interface Sidebar {
-  open: boolean
+  open: boolean;
 }
 
-const Sidebar: React.FC<Sidebar> = ({open}) => {
+const Sidebar: React.FC<Sidebar> = ({ open }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      theme
-    );
+    document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
-  const logoutHandler = useCallback(() => {
-    dispatch(authAction.logout())
-  }, [])
+  const logoutHandler = useCallback(async () => {
+    dispatch(authAction.logout());
+  }, []);
 
   return (
-    <nav className={`${classes["sidebar"]} ${!open ? classes["close"] : ''}  ${classes[theme]}`}>
+    <nav
+      className={`${classes["sidebar"]} ${!open ? classes["close"] : ""}  ${
+        classes[theme]
+      }`}
+    >
       <header>
         <div className={classes["image-text"]}>
           <span className={classes["image"]}>
@@ -50,42 +52,54 @@ const Sidebar: React.FC<Sidebar> = ({open}) => {
             <li className={classes["nav-link"]}>
               <a href="#">
                 <i className={`bx bx-home-alt ${classes["icon"]}`}></i>
-                <span className={`${classes["text"]} ${classes["nav-text"]}`}>Dashboard</span>
+                <span className={`${classes["text"]} ${classes["nav-text"]}`}>
+                  Dashboard
+                </span>
               </a>
             </li>
 
             <li className={classes["nav-link"]}>
               <a href="#">
                 <i className={`bx bx-bar-chart-alt-2 ${classes["icon"]}`}></i>
-                <span className={`${classes["text"]} ${classes["nav-text"]}`}>Revenue</span>
+                <span className={`${classes["text"]} ${classes["nav-text"]}`}>
+                  Revenue
+                </span>
               </a>
             </li>
 
             <li className={classes["nav-link"]}>
               <a href="#">
                 <i className={`bx bx-bell ${classes["icon"]}`}></i>
-                <span className={`${classes["text"]} ${classes["nav-text"]}`}>Notifications</span>
+                <span className={`${classes["text"]} ${classes["nav-text"]}`}>
+                  Notifications
+                </span>
               </a>
             </li>
 
             <li className={classes["nav-link"]}>
               <a href="#">
                 <i className={`bx bx-pie-chart-alt ${classes["icon"]}`}></i>
-                <span className={`${classes["text"]} ${classes["nav-text"]}`}>Analytics</span>
+                <span className={`${classes["text"]} ${classes["nav-text"]}`}>
+                  Analytics
+                </span>
               </a>
             </li>
 
             <li className={classes["nav-link"]}>
               <a href="#">
                 <i className={`bx bx-heart ${classes["icon"]}`}></i>
-                <span className={`${classes["text"]} ${classes["nav-text"]}`}>Likes</span>
+                <span className={`${classes["text"]} ${classes["nav-text"]}`}>
+                  Likes
+                </span>
               </a>
             </li>
 
             <li className={classes["nav-link"]}>
               <a href="#">
                 <i className={`bx bx-wallet ${classes["icon"]}`}></i>
-                <span className={`${classes["text"]} ${classes["nav-text"]}`}>Wallets</span>
+                <span className={`${classes["text"]} ${classes["nav-text"]}`}>
+                  Wallets
+                </span>
               </a>
             </li>
           </ul>
@@ -95,20 +109,25 @@ const Sidebar: React.FC<Sidebar> = ({open}) => {
           <li className="">
             <a onClick={logoutHandler}>
               <i className={`bx bx-log-out ${classes["icon"]}`}></i>
-              <span className={`${classes["text"]} ${classes["nav-text"]}`}>Logout</span>
+              <span className={`${classes["text"]} ${classes["nav-text"]}`}>
+                Logout
+              </span>
             </a>
           </li>
 
           <li className={classes["mode"]}>
             <div className={classes["sun-moon"]}>
-              <i className={`bx bx-moon ${classes["icon"]} ${classes["moon"]}`}></i>
-              <i className={`bx bx-sun ${classes["icon"]} ${classes["sun"]}`}></i>
+              <i
+                className={`bx bx-moon ${classes["icon"]} ${classes["moon"]}`}
+              ></i>
+              <i
+                className={`bx bx-sun ${classes["icon"]} ${classes["sun"]}`}
+              ></i>
             </div>
-            <span className={`${classes["text"]} ${classes["mode-text"]}`}>Dark mode</span>
-
-            <div className={classes["toggle-switch"]} onClick={toggleTheme}>
-              <span className={classes["switch"]}></span>
-            </div>
+            <span className={`${classes["text"]} ${classes["mode-text"]}`}>
+              Dark mode
+            </span>
+            <ToggleSwitch enabled={theme === "dark"} onClick={toggleTheme} />
           </li>
         </div>
       </div>

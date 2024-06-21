@@ -3,7 +3,7 @@ import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom"
 import MainLayout from "../layouts/Main";
 import AuthLayout from "../layouts/Auth";
 import SignIn, { action as singInAction} from "~/pages/Auth/SignIn";
-import SignUp from "~/pages/Auth/SignUp";
+import SignUp, { action as singUpAction} from "~/pages/Auth/SignUp";
 import ErrorMessage from "~/components/ErrorMessage";
 import { useAppSelector } from "~/store";
 import {isUserAuthenticated} from "~/pages/Auth/slice";
@@ -39,6 +39,7 @@ const AppRouter: React.FC = () => {
         {
           path: "sign-up",
           element: <SignUp />,
+          action: singUpAction,
         },
       ],
     },

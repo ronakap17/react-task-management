@@ -8,7 +8,7 @@ import { Languages } from './../i18n';
 export interface UseTranslation {
   (prefix?: string): {
     currentLanguage: Languages
-    t: TFunction
+    t: (key: string, options?: TOptions) => string
     i18n: i18n
     ready: boolean
     changeLanguage: (language: Languages, withLoader?: boolean) => Promise<TFunction>
@@ -40,7 +40,7 @@ const useTranslation: UseTranslation = prefix => {
 
   return {
     currentLanguage: i18n.language as Languages,
-    t: (key: string, options?: TOptions | string) => t((prefix || '') + key, options),
+    t: (key: string, options?: TOptions) => t((prefix || '') + key, options),
     i18n,
     ...rest,
     changeLanguage

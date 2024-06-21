@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  background: var(--box-color);
+  padding: var(--size-24);
+  border-radius: var(--size-8);
+  box-shadow: var(--box-shadow);
+
+  header {
+    font-size: var(--size-24);
+    color: var(--text-color);
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    display: flex;
+    flex: 1 1 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}

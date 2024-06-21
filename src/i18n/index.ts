@@ -90,7 +90,7 @@ i18next
   .init({
     fallbackLng,
     lng: Languages.ENGLISH,
-    whitelist: _.map(availableLanguages, "value"),
+    // whitelist: _.map(availableLanguages, "value"),
     resources: {
       [Languages.ENGLISH]: {
         translation: translationEN,

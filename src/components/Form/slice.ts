@@ -1,5 +1,5 @@
 import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
-import _, { isEqual, memoize } from "lodash";
+import _, { isEqual } from "lodash";
 import { RootState } from "~/store";
 
 export enum ValidatorsEnum {

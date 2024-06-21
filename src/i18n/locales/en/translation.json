@@ -8,10 +8,16 @@
       "default": "Something went wrong! Please try again later."
     }
   },
+  "form": {
+    "file": {
+      "maxFiles": "Max. {{max}} Files",
+      "exceedMaxFiles": "You can only upload up to {{max}} files!"
+    }
+  },
 
   "auth": {
     "login": {
-      "title": "Login",
+      "title": "Sign In",
       "form": {
         "email": {
           "label": "Email",
@@ -20,7 +26,30 @@
         "password": {
           "label": "Password",
           "placeholder": "Enter Password"
-        }
+        },
+        "submit": "SIGN IN"
+      }
+    },
+    "register": {
+      "title": "Sign Up",
+      "form": {
+        "name": {
+          "label": "Full Name",
+          "placeholder": "Enter full name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter email address"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter Password"
+        },
+        "img": {
+          "label": "Profile Picture",
+          "placeholder": "Select profile picture"
+        },
+        "submit": "SIGN UP"
       }
     }
   }

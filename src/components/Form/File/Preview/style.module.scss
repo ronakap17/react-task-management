@@ -1,0 +1,24 @@
+.file-preview-container {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+  padding: var(--size-12) 0;
+  overflow-x: auto;
+  .preview {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    img {
+      height: 99px;
+      // max-width: 80px;
+    }
+
+    .icon {
+      position: relative;
+      color: var(--text-color-light);
+      font-size: var(--size-20);
+      top: -11px;
+      left: -14px;
+    }
+  }
+}
