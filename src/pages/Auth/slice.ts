@@ -1,6 +1,6 @@
 import { createSelector, createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { User } from "~/types/user";
-import { refreshToken, userDetails, userLogin, userRegister } from "./actions";
+import { refreshToken, fetchUserDetails, userLogin, userRegister } from "./actions";
 import { RootState } from "~/store";
 import { jwtDecode } from "jwt-decode";
 
@@ -47,7 +47,7 @@ const authSlice = createSlice({
     },
   },
   extraReducers(builder) {
-    builder.addCase(userDetails.fulfilled, (state, { payload }) => {
+    builder.addCase(fetchUserDetails.fulfilled, (state, { payload }) => {
       const { user } = payload;
       localStorage.setItem("currentUser", JSON.stringify(user));
       state.user = user;

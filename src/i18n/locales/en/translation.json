@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "Task Manager"
+    "title": "WorkSpace",
+    "subTitle": "Task Management"
   },
   "system": {
     "error": {

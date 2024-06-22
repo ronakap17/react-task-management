@@ -12,9 +12,22 @@
     color: var(--text-color-light);
     cursor: pointer;
   }
-  img {
-    width: 40px;
-    border-radius: 50%;
-    margin: 0;
+  .user-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 40px;
+      border-radius: 50%;
+      margin: 0;
+    }
+
+    .name {
+      padding-left: var(--size-8);
+      font-weight: var(--font-weight-medium);
+      color: var(--text-color-light);
+      font-size: var(--size-16);
+    }
+
   }
 }

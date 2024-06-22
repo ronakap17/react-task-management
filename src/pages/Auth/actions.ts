@@ -46,7 +46,7 @@ export const refreshToken = createAsyncThunk<LoginResponsePayload, void, { rejec
   }
 );
 
-export const userDetails = createAsyncThunk<UserDetailsResponsePayload, void>(
+export const fetchUserDetails = createAsyncThunk<UserDetailsResponsePayload, void>(
   "auth/userDetails",
   async (_, { rejectWithValue }) => {
     try {

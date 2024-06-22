@@ -1,21 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
 import classes from "./style.module.scss";
 import { AppLoader } from "./Loader/AppLoader";
+import { useAppDispatch } from "~/store";
+import { fetchUserDetails } from "~/pages/Auth/actions";
 
 const MainLayout: React.FC = () => {
-  const [openSidebar, setOpenSidebar] = useState(false);
-
-  const toggleSidebar = () => {
-    setOpenSidebar((open) => !open);
-  };
+  const dispatch = useAppDispatch();
+  
+  useEffect(() => {
+    dispatch(fetchUserDetails())
+  }, [])
   return (
     <>
-      <Sidebar open={openSidebar} />
+      <Sidebar />
       <section className={classes["dashboard"]}>
-        <Header toggleSidebar={toggleSidebar} />
+        <Header />
         <section className={classes["container"]}>
           <div className={classes["text"]}>Dashboard Sidebar</div>
           <Outlet />

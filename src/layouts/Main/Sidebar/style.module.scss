@@ -93,26 +93,6 @@
     align-items: center;
     margin-top: var(--size-8);
 
-    &.search-box {
-      border-radius: var(--size-6);
-      background-color: var(--primary-color-light);
-      cursor: pointer;
-      transition: var(--tran-05);
-
-      input {
-        height: 100%;
-        width: 100%;
-        outline: none;
-        border: none;
-        background-color: var(--primary-color-light);
-        color: var(--text-color-light);
-        border-radius: var(--size-6);
-        font-size: var(--size-17);
-        font-weight: var(--font-weight-medium);
-        transition: var(--tran-05);
-      }
-    }
-
     a {
       list-style: none;
       height: 100%;
@@ -125,7 +105,7 @@
       text-decoration: none;
       transition: var(--tran-03);
 
-      &:hover {
+      &:hover, &.active {
         background-color: var(--primary-color);
 
         .icon,
@@ -174,12 +154,6 @@
     li a:hover .icon,
     li a:hover .text {
       color: var(--text-color-light);
-    }
-    .sun-moon i.sun {
-      opacity: 1;
-    }
-    .sun-moon i.moon {
-      opacity: 1;
     }
   }
 

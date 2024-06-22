@@ -1,0 +1,38 @@
+$openCircleOffset: calc(var(--size-8) * -1);
+
+.user-avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--size-40);
+  height: var(--size-40);
+  line-height: 1.1;
+  border-radius: 50%;
+  color: #fff;
+  background-color: var(--primary-color);
+  user-select: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .1);
+    transition: all .15s ease-out;
+  }
+
+  &.active,
+  &.hovering:hover {
+    &::before {
+      top: $openCircleOffset;
+      left: $openCircleOffset;
+      right: $openCircleOffset;
+      bottom: $openCircleOffset;
+    }
+  }
+}
