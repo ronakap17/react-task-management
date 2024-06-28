@@ -14,13 +14,13 @@ const emptyUser: User = {
   email: "",
   name: "",
   img: "",
-  img_url: "",
-  is_active: false,
-  email_verified_at: null,
-  created_at: null,
-  updated_at: null,
-  deleted_at: null,
-  role_names: []
+  imgUrl: "",
+  isActive: false,
+  emailVerifiedAt: null,
+  createdAt: null,
+  updatedAt: null,
+  deletedAt: null,
+  roleNames: []
 };
 
 const userToken = localStorage.getItem("userToken")

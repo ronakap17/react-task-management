@@ -19,8 +19,8 @@ const Header: React.FC = () => {
       ></i>
 
       <span className={classes["user-details"]}>
-        {user.img_url ? (
-          <img src={user.img_url} alt="User Image" />
+        {user.imgUrl ? (
+          <img src={user.imgUrl} alt="User Image" />
         ) : (
           <UserAvatar name={user.name} />
         )}

@@ -9,14 +9,14 @@ export interface User {
   id: number | null;
   name: string;
   email: string;
-  email_verified_at: null | string;
+  emailVerifiedAt: null | string;
   img: string | null;
-  img_url: string | null;
-  is_active: boolean;
-  created_at: null | string;
-  updated_at: null | string;
-  deleted_at: null | string;
-  role_names: Role[]
+  imgUrl: string | null;
+  isActive: boolean;
+  createdAt: null | string;
+  updatedAt: null | string;
+  deletedAt: null | string;
+  roleNames: Role[]
 }
 
 export type LoginPayload = {
@@ -26,7 +26,7 @@ export type LoginPayload = {
 
 export type LoginResponsePayload = {
   token: string
-  token_type: string
+  tokenType: string
   user: User
 }
 

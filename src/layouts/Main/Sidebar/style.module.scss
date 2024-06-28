@@ -6,6 +6,7 @@
   transition: var(--tran-05);
   z-index: 100;
   overflow: hidden;
+  border-right: var(--border);
 
   &.close {
     width: var(--size-88);
@@ -128,6 +129,7 @@
     }
 
     .bottom-content {
+      border-top: var(--border);
       .mode {
         border-radius: var(--size-6);
         background-color: var(--primary-color-light);

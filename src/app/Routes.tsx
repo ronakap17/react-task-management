@@ -7,6 +7,8 @@ import SignUp, { action as singUpAction} from "~/pages/Auth/SignUp";
 import ErrorMessage from "~/components/ErrorMessage";
 import { useAppSelector } from "~/store";
 import {isUserAuthenticated} from "~/pages/Auth/slice";
+import Dashboard from "~/pages/Dashboard";
+import Users from "~/pages/Users";
 
 const AppRouter: React.FC = () => {
   const isUserLoggedIn = useAppSelector(state => isUserAuthenticated(state));
@@ -18,7 +20,11 @@ const AppRouter: React.FC = () => {
       children: [
         {
           index: true,
-          element: <h2>Home</h2>,
+          element: <Dashboard />,
+        },
+        {
+          path: 'users',
+          element: <Users />,
         },
       ],
       // lazy: async () => {

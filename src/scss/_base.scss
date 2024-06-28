@@ -78,3 +78,22 @@ a,
     }
   }
 }
+
+
+/* === Custom Scroll Bar CSS === */
+::-webkit-scrollbar {
+  width: var(--size-8);
+}
+::-webkit-scrollbar-track {
+  background: var(--scroll-track-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-bar-color);
+  border-radius: var(--size-3);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-bar-hover-color);
+}
+

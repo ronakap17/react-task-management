@@ -16,6 +16,9 @@ html {
   --box-shadow-color: #{$light-box-shadow-color};
   --border-color: #{$light-border-color};
   --color-dimmer: #{$light-color-dimmer};
+  --scroll-track-color: #{$light-scroll-track-color};
+  --scroll-bar-color: #{$light-scroll-bar-color};
+  --scroll-bar-hover-color: #{$light-scroll-bar-hover-color};
 
   // Others
   --border: 1px solid #{$light-border-color};
@@ -38,6 +41,9 @@ html[data-theme="dark"] {
   --box-shadow-color: #{$dark-box-shadow-color};
   --border-color: #{$dark-border-color};
   --color-dimmer: #{$dark-color-dimmer};
+  --scroll-track-color: #{$dark-scroll-track-color};
+  --scroll-bar-color: #{$dark-scroll-bar-color};
+  --scroll-bar-hover-color: #{$dark-scroll-bar-hover-color};
 
   // Others
   --border: 1px solid #{$dark-border-color};

@@ -1,0 +1,18 @@
+tbody {
+  td {
+    &.action-column {
+      width: var(--size-80);
+      text-align: right;
+
+      i {
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

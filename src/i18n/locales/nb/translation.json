@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "Task Manager"
+    "title": "WorkSpace",
+    "subTitle": "Task Management"
   },
   "system": {
     "error": {
@@ -10,7 +11,7 @@
   },
   "form": {
     "file": {
-      "maxFile": "Max. {{max}} Files",
+      "maxFiles": "Max. {{max}} Files",
       "exceedMaxFiles": "You can only upload up to {{max}} files!"
     }
   },
@@ -50,6 +51,14 @@
           "placeholder": "Select profile picture"
         },
         "submit": "SIGN UP"
+      }
+    }
+  },
+  "users": {
+    "list": {
+      "status": {
+        "0": "In Active",
+        "1": "Active"
       }
     }
   }

@@ -53,5 +53,13 @@
         "submit": "SIGN UP"
       }
     }
+  },
+  "users": {
+    "list": {
+      "status": {
+        "0": "In Active",
+        "1": "Active"
+      }
+    }
   }
 }

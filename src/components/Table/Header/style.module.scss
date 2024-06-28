@@ -1,0 +1,22 @@
+thead {
+    th {
+        position: relative;
+        &.action-column {
+            width: var(--size-80);
+            text-align: right;
+        }
+
+        &:first-child {
+            i {
+                left: -8px;
+            }
+        }
+
+        i{
+            color: var(--box-color);
+            position: absolute;
+            top: var(--size-15);
+            left: -30px;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: var(--size-8);
+  font-size: var(--size-13);
+  color: var(--text-color-light);
+
+  .info-text {
+  }
+
+  .select {
+    margin: var(--size-8);
+    padding: var(--size-5);
+    border: var(--border);
+    border-radius:var(--size-5);
+
+    &.margin-right-none {
+        margin-right: 0;
+    }
+  }
+
+  .controls {
+    padding: 0 var(--size-16);
+    display: flex;
+
+    .button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+  
+      &.button-prev {
+        margin-right: var(--size-20);
+      }
+  
+      &.button-next {
+        margin-left: var(--size-20);
+      }
+  
+      &:disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
+  
+      i {
+          font-size: 24px;
+          color: var(--text-color-light);
+      }
+    }
+  }
+}
