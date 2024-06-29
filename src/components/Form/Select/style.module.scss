@@ -1,0 +1,23 @@
+.select {
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.input {
+  display: flex;
+  flex: 1 1 100%;
+  position: relative;
+  height: var(--size-40);
+  outline: none;
+  font-size: var(--size-14);
+  color: var(--text-color-light);
+  border: var(--border);
+  border-radius: var(--size-4);
+  padding: 0 var(--size-12);
+  &:focus {
+    border: 2px solid var(--primary-color);
+  }
+}

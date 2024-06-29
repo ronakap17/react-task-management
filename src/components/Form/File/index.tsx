@@ -5,6 +5,7 @@ import Field, { FieldProps } from "../Field";
 import { toast } from "react-toastify";
 import useTranslation from "~/hooks/useTranslation";
 import Preview from "./Preview";
+import Icon from "~/components/Icon";
 
 export interface FilePayload {
   file: File;
@@ -125,7 +126,7 @@ const File: FileComponent = (props, ref) => {
         className={classes["select-file"]}
         onClick={(e) => triggerFileInputClick(e, inputFileElement)}
       >
-        <i className={`bx bx-camera ${classes["icon"]}`}></i>
+        <Icon name="bx-camera" />
         <span className={classes["placeholder"]}>{placeholder}</span>
         {maxFiles > 1 && (
           <span className={classes["max-files"]}>

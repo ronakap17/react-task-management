@@ -7,15 +7,15 @@ thead {
         }
 
         &:first-child {
-            i {
+            .sort-icon {
                 left: -8px;
             }
         }
 
-        i{
+        .sort-icon{
             color: var(--box-color);
             position: absolute;
-            top: var(--size-15);
+            top: var(--size-12);
             left: -30px;
         }
     }

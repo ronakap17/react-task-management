@@ -1,13 +1,14 @@
 import { useMemo } from "react";
 import classes from "./style.module.scss";
 import classNames from "classnames";
+import Icon, { IconProps } from "../Icon";
 interface FlashMessageType {
   type?: "error" | "warning" | "info" | "success";
-  icon?: string;
+  icon?: IconProps['name'];
   text: string;
 }
 const FlashMessage: React.FC<FlashMessageType> = ({ type, icon, text }) => {
-  const bxIcon = useMemo(() => {
+  const bxIcon = useMemo<IconProps['name'] | ''>(() => {
     if (icon) {
       return icon;
     }
@@ -28,7 +29,7 @@ const FlashMessage: React.FC<FlashMessageType> = ({ type, icon, text }) => {
 
   return (
     <div className={classNames(classes["msg-container"], type && classes[type])}>
-      {bxIcon && <i className={`bx ${bxIcon} ${classes["icon"]}`}></i>}
+      {bxIcon && <Icon className={`${classes["icon"]}`} name={bxIcon} />}
       <div className={classes["content"]}>{text}</div>
     </div>
   );

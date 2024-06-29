@@ -4,14 +4,13 @@
 
 .select-file {
     display: flex;
-    align-items: spcenter;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: var(--size-8);
     border: var(--border);
     border-radius: var(--size-4);
     color: var(--primary-color);
-    margin-top: var(--size-8);
 
     .icon {
         font-size: var(--size-24);

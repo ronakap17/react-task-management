@@ -11,12 +11,52 @@
       display: flex;
       flex: 1 1 100%;
       color: var(--text-color);
+      margin-bottom: var(--size-8);
     }
 
     &.has-errors {
       input {
         border-width: var(--size-2);
         border-color: var(--danger-color);
+      }
+    }
+
+    .input-wrap {
+      display: flex;
+      flex: 1 1 100%;
+      position: relative;
+      flex-wrap: wrap;
+    
+      &.icon-left {
+        .icon-wrap {
+          left: 0;
+        }
+        input, select {
+          padding-left: var(--size-40);
+        }
+      }
+      &.icon-right {
+        .icon-wrap {
+          right: 0;
+        }
+        input, select {
+          padding-right: var(--size-40);
+        }
+      }
+    }
+
+    .icon-wrap {
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: var(--size-42);
+      height: 100%;
+      color: var(--text-color-light);
+    
+      &:not(.icon-element) {
+        pointer-events: none;
       }
     }
   }

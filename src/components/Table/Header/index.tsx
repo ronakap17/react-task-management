@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useTableContext } from "..";
 import classes from "./style.module.scss";
+import Icon from "~/components/Icon";
 
 interface TableHeaderProps {
   className?: string;
@@ -27,11 +28,13 @@ const TableHeader: React.FC<TableHeaderProps> = ({ className }) => {
             onClick={() => sortHandler(column)}
           >
             {onSortChange && sortBy === column.dataKey && (
-              <i
-                className={`bx ${
+              <Icon
+                size={20}
+                className={classes['sort-icon']}
+                name={
                   sortOrder === "asc" ? "bx-up-arrow-alt" : "bx-down-arrow-alt"
-                }`}
-              ></i>
+                }
+              />
             )}
             {column.title}
           </th>

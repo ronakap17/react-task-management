@@ -1,6 +1,7 @@
 import _ from "lodash";
 import { useTableContext } from "..";
 import classes from "./style.module.scss";
+import Icon from "~/components/Icon";
 
 interface TableRowsProps<T> {
   data: T[];
@@ -18,8 +19,8 @@ const TableRows = <T,>({ data }: TableRowsProps<T>) => {
             </td>
           ))}
           <td className={classes["action-column"]}>
-            <i className={`bx bx-pencil`}></i>
-            <i className={`bx bx-trash`}></i>
+            <Icon name={'bx-pencil'} size={20}/>
+            <Icon name={'bx-trash'} size={20}/>
           </td>
         </tr>
       ))}

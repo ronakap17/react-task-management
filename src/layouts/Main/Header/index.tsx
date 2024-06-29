@@ -3,6 +3,7 @@ import classes from "./style.module.scss";
 import { useAppDispatch, useAppSelector } from "~/store";
 import { appSidebarActions } from "../Sidebar/slice";
 import UserAvatar from "~/components/UserAvatar";
+import Icon from "~/components/Icon";
 
 const Header: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -13,10 +14,12 @@ const Header: React.FC = () => {
 
   return (
     <div className={classes["header"]}>
-      <i
-        className={`bx bx-menu ${classes["sidebar-toggle"]}`}
+      <Icon
+        name={'bx-menu'}
+        size={26}
+        className={classes["sidebar-toggle"]}
         onClick={toggleSidebar}
-      ></i>
+      />
 
       <span className={classes["user-details"]}>
         {user.imgUrl ? (

@@ -6,6 +6,7 @@ import {
 } from "~/types/pagination";
 import classNames from "classnames";
 import { itemsPerPageArray } from "~/data/pagination";
+import Icon from "../Icon";
 
 interface PaginationProps extends PaginationType {
   onChange?: (paginationParam: PaginationRequest) => void;
@@ -70,44 +71,32 @@ const Pagination: React.FC<PaginationProps> = ({
       </span>
       <div className={classes["controls"]}>
         <button
-          className={classNames(
-            classes["button"],
-            classes["button-prev"]
-          )}
+          className={classNames(classes["button"], classes["button-prev"])}
           onClick={() => handlePageChange(1)}
           disabled={currentPage === 1}
         >
-          <i className='bx bx-chevron-left'></i>
+          <Icon name="bx-chevron-left" />
         </button>
         <button
-          className={classNames(
-            classes["button"],
-            classes["button-prev"]
-          )}
+          className={classNames(classes["button"], classes["button-prev"])}
           onClick={handlePrevPage}
           disabled={currentPage === 1}
         >
-          <i className='bx bx-chevrons-left' ></i>
+          <Icon name="bx-chevrons-left" />
         </button>
         <button
-          className={classNames(
-            classes["button"],
-            classes["button-next"]
-          )}
+          className={classNames(classes["button"], classes["button-next"])}
           onClick={handleNextPage}
           disabled={currentPage === lastPage}
         >
-          <i className='bx bx-chevron-right'></i>
+          <Icon name="bx-chevron-right" />
         </button>
         <button
-          className={classNames(
-            classes["button"],
-            classes["button-next"]
-          )}
+          className={classNames(classes["button"], classes["button-next"])}
           onClick={() => handlePageChange(lastPage)}
           disabled={currentPage === lastPage}
         >
-          <i className='bx bx-chevrons-right'></i>
+          <Icon name="bx-chevrons-right" />
         </button>
       </div>
       <span className={classes["info-text"]}>Page:</span>

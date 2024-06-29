@@ -1,7 +1,9 @@
+import { IconProps } from "~/components/Icon";
+
 export interface sidebarMenuItem {
     title: string;
     link?: string;
-    icon: string;
+    icon: IconProps['name'];
     className?: string;
     onClick?: React.MouseEventHandler;
     children?: React.ReactNode

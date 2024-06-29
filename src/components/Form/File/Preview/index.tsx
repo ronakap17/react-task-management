@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './style.module.scss';
 import { FilePayload } from '..';
+import Icon from '~/components/Icon';
 
 export interface PreviewProps {
     files: FilePayload[]
@@ -14,7 +15,7 @@ const Preview: PreviewComponent = ({files, removeFile}) => (
         {files.map((file, index) =>
             <div className={classes['preview']} key={index}>
                 <img src={file.previewUrl} alt="..."/>
-                <i className={`bx bxs-x-circle ${classes["icon"]}`} onClick={() => removeFile(index)}></i>
+                <Icon name="bxs-x-circle" size={20} className={classes["icon"]} onClick={() => removeFile(index)} />
             </div>
         )}
     </div>
