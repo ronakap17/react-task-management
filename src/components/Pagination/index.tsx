@@ -7,8 +7,10 @@ import {
 import classNames from "classnames";
 import { itemsPerPageArray } from "~/data/pagination";
 import Icon from "../Icon";
+import Select from "../Form/Select";
 
 interface PaginationProps extends PaginationType {
+  className?: string;
   onChange?: (paginationParam: PaginationRequest) => void;
 }
 
@@ -19,6 +21,7 @@ const Pagination: React.FC<PaginationProps> = ({
   from,
   to,
   total,
+  className,
   onChange,
 }) => {
   const handleSelectItemsPerPage = useCallback(
@@ -53,23 +56,23 @@ const Pagination: React.FC<PaginationProps> = ({
   );
 
   return (
-    <div className={classes["pagination"]}>
-      <span className={classes["info-text"]}>Items per page:</span>
-      <select
+    <div className={classNames(classes["pagination"], className)}>
+      <span className={classes["section"]}>Items per page:</span>
+      <Select
         className={classes["select"]}
-        onChange={handleSelectItemsPerPage}
+        iconWrapperClass={classes["icon-wrap"]}
+        options={itemsPerPageArray.map((itemsPerPage) => ({
+          text: itemsPerPage,
+          value: itemsPerPage,
+        }))}
         value={perPage}
-      >
-        {itemsPerPageArray.map((itemsPerPage) => (
-          <option key={itemsPerPage} value={itemsPerPage}>
-            {itemsPerPage}
-          </option>
-        ))}
-      </select>
-      <span className={classes["info-text"]}>
+        iconSize={20}
+        onChange={handleSelectItemsPerPage}
+      />
+      <span className={classes["section"]}>
         {`${from} - ${to} of ${total} items`}
       </span>
-      <div className={classes["controls"]}>
+      <div className={classNames(classes["controls"], classes["section"])}>
         <button
           className={classNames(classes["button"], classes["button-prev"])}
           onClick={() => handlePageChange(1)}
@@ -99,18 +102,18 @@ const Pagination: React.FC<PaginationProps> = ({
           <Icon name="bx-chevrons-right" />
         </button>
       </div>
-      <span className={classes["info-text"]}>Page:</span>
-      <select
+      <span className={classes["section"]}>Page:</span>
+      <Select
         className={classNames(classes["select"], classes["margin-right-none"])}
-        onChange={handleSelectPage}
+        iconWrapperClass={classes["icon-wrap"]}
+        options={[...Array(lastPage)].map((_, pageNo) => ({
+          text: pageNo + 1,
+          value: pageNo + 1,
+        }))}
         value={currentPage}
-      >
-        {[...Array(lastPage)].map((_, pageNo) => (
-          <option key={pageNo} value={pageNo + 1}>
-            {pageNo + 1}
-          </option>
-        ))}
-      </select>
+        iconSize={20}
+        onChange={handleSelectPage}
+      />
     </div>
   );
 };

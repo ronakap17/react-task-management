@@ -57,7 +57,7 @@ const Users: React.FC = () => {
         }))}
       />
     </Table>
-    <Pagination {...paginate} onChange={handlePageChange}/>
+    {!!users.length && <Pagination {...paginate} onChange={handlePageChange}/>}
     </>
   );
 };

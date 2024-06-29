@@ -22,8 +22,7 @@ const MainLayout: React.FC = () => {
         <Header />
         <section className={classes["container"]}>
           <div className={classes["text"]}>{title}</div>
-          <div className="content">
-
+          <div className={classes["content"]}>
             <Outlet />
           </div>
         </section>

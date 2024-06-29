@@ -1,19 +1,31 @@
 .pagination {
   display: flex;
+  flex-direction: row;
+  flex: 1 1 100%;
   align-items: center;
   justify-content: end;
   margin: var(--size-8);
   font-size: var(--size-13);
   color: var(--text-color-light);
 
-  .info-text {
+  .section {
+    margin-left: var(--size-16);
   }
 
   .select {
-    margin: var(--size-8);
-    padding: var(--size-5);
-    border: var(--border);
-    border-radius:var(--size-5);
+    width: auto;
+    flex: 0 0 auto;
+    margin: 0 0 0 var(--size-8);
+    
+    select {
+      height: var(--size-32);
+      padding: 0 var(--size-8);
+      padding-right: var(--size-24) !important;
+    }
+
+    .icon-wrap {
+      width: 24px;
+    }
 
     &.margin-right-none {
         margin-right: 0;
@@ -21,7 +33,6 @@
   }
 
   .controls {
-    padding: 0 var(--size-16);
     display: flex;
 
     .button {
