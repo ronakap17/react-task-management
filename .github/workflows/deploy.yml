@@ -26,7 +26,7 @@ jobs:
       run: echo "Environment variables are set"
 
     - name: Replace Tokens in .env File
-      uses: microsoft/TokenReplace@v0.3
+      uses: microsoft/TokenReplace
       with:
         filePath: '.env'
 
