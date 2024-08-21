@@ -19,10 +19,19 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Set Up Environment Variables
+      env:
+        VITE_APP_API_BASE_URL: ${{ secrets.VITE_APP_API_BASE_URL }}
+        APP_NAME: ${{ vars.APP_NAME }}
+      run: echo "Environment variables are set"
+
+    - name: Replace Tokens in .env File
+      uses: microsoft/TokenReplace@v0.3
+      with:
+        filePath: '.env'
+
     - name: Use environment-specific secrets
       run: |
-        sed -i -e "s/VITE_APP_API_BASE_URL/${{ secrets.VITE_APP_API_BASE_URL }}/g" .env
-        sed -i -e "s/APP_NAME/${{ vars.APP_NAME }}/g" .env
         echo "VITE_APP_API_BASE_URL=${{ secrets.VITE_APP_API_BASE_URL }}" >> .env
         echo "APP_NAME=${{ vars.APP_NAME }}" >> .env
 
