@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-
+    environment: ${{ github.ref == 'refs/heads/master' && 'production' || github.ref == 'refs/heads/staging' && 'staging'  || 'develop' }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,6 +18,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: Use environment-specific secrets
+        run: |
+          echo "VITE_APP_API_BASE_URL=${{ secrets.VITE_APP_API_BASE_URL }}" >> .env
+          echo "APP_NAME=$APP_NAME" >> .env
 
     - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
