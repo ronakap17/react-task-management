@@ -21,8 +21,8 @@ jobs:
 
     - name: Use environment-specific secrets
       run: |
-        sed -i "s/#{VITE_APP_API_BASE_URL}#/Test/g" .env
-        sed -i "s/#{APP_NAME}#/TTTT/g" .env
+        sed -i "s/#{VITE_APP_API_BASE_URL}#/\${{ secrets.VITE_APP_API_BASE_URL }}/g" .env
+        sed -i "s/#{APP_NAME}#/\${{ vars.APP_NAME }}/g" .env
         echo "VITE_APP_API_BASE_URL=${{ secrets.VITE_APP_API_BASE_URL }}" >> .env
         echo "APP_NAME=${{ vars.APP_NAME }}" >> .env
 
