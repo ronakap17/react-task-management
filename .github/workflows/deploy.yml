@@ -22,7 +22,7 @@ jobs:
     - name: Use environment-specific secrets
       run: |
         echo "VITE_APP_API_BASE_URL=${{ secrets.VITE_APP_API_BASE_URL }}" >> .env
-        echo "APP_NAME=${{ env.APP_NAME }}" >> .env
+        echo "APP_NAME=${{ vars.APP_NAME }}" >> .env
 
     - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
